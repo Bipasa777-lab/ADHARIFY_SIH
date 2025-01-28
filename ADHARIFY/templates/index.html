@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdhariFy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="aadhaar.svg">
+
+</head>
+
+<body>
+
+    <!-- Header Area with Navbar ------------------------------------------------------------------------------------------------>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" height="100px" alt="logo">
+            </div>
+            <ul class="nav-links">
+                <li> <a href="#"> <i class="fa-solid fa-house"></i> Home</a> </li>
+                <li><a href="#"><i class="fa-regular fa-address-card"></i> About</a></li>
+                <li><a href="#"><i class="fa-solid fa-laptop"></i> Services</a></li>
+                <li><a href="#"><i class="fa-regular fa-address-book"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Slides Banner -->
+    <main>
+        <section class="banner">
+            <div class="slides-container">
+                <div class="slide">
+                    <h2>Welcome to <b> AdhariFy 🌐</b> </h2>
+                    <p>made by Dark Beasts!</p>
+                </div>
+                <div class="slide">
+                    <h2>Aadhaar veriFy on the next level+ 🚀</h2>
+                    <p>Say goodbye to manual checks and reduce fraud risks with our cutting-edge technology designed to
+                        meet global regulatory standards.</p>
+                </div>
+                <div class="slide">
+                    <h2>Join the Future 🌟😎</h2>
+                    <p>Empower your ideas with our tech-driven approach.</p>
+                </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </section>
+        <!-- Services Section 1 : with Camera Button Inside the KYC Service Box -->
+        <section class="services">
+            <h2>Our Services <i class="fa-solid fa-laptop"></i> </h2>
+            <div class="service-container">
+                <div class="service-box">
+                    <h3>KYC Verification By AI</h3>
+                    <p>🔒 Enhance your security and streamline customer onboarding with AI-powered KYC verification. 🤖
+                        Our cutting-edge AI algorithms automate identity verification 🆔, 📄 document authentication,
+                        and 👁️ facial recognition, ensuring a fast ⚡, secure 🔐, and seamless 🌟 process. 🚀🔍🔒</p>
+                    <!-- Camera On Button Inside the Service Box -->
+                    <button class="camera-button" onclick="toggleCamera()">
+                        CAMERA&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-camera"></i>
+                    </button>
+
+                </div>
+                <!-- Services Section 2 : Coming soon feature smart update of Aadhaar using AI -->
+                <div class="service-box coming-soon">
+                    <h3>Smart Update Of Aadhaar Using AI</h3>
+                    <p>👁️‍🗨️ Our AI detects faces to expedite Aadhaar updates by quickly fetching data from the
+                        database 📥 and seamlessly updating existing records 📝. 🚀 This advanced system ensures a fast
+                        ⚡, secure 🔒, and hassle-free 🌐 process for keeping your Aadhaar information up to date. ✔️🆕
+                    </p>
+                    <span class="coming-soon-label">Coming Soon <i class="fa-regular fa-clock"></i></span>
+                </div>
+
+                <div class="service-box coming-soon">
+                    <h3>Secure Bank Details Protected by AI 🏦🔐</h3>
+                    <p>Keep your bank details safe with AI-powered security! 🤖🔒 Our smart algorithms detect suspicious
+                        activities 🚨, protect against fraud 🛡️, and ensure your financial data is always secure and
+                        private. Trust AI to guard your information 24/7! 🧠📊🔑
+                    </p>
+                    <span class="coming-soon-label">Coming Soon <i class="fa-regular fa-clock"></i></span>
+                </div>
+
+            </div>
+            </div>
+        </section>
+
+        <!-- Camera Feed Section -->
+        <div class="camera-feed-container" id="cameraFeed">
+            <div class="camera-feed-box">
+                <img id="video-feed" src="{{ url_for('video') }}" alt="Live Video Stream">
+                <div id="status">Initializing<span class="dots">...</span></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 AdhariFy. All rights reserved.</p>
+        <p>Follow us on <a href="#">Instagram</a> <i class="fa-brands fa-instagram"></i> | <a href="#">LinkedIn</a> <i
+                class="fa-brands fa-linkedin"></i> | <a href="#">Facebook</a> <i class="fa-brands fa-facebook"></i> </p>
+    </footer>
+
+    <!-- JavaScript -------------------------------------------------------------------------------------------------------->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function updateSlidePosition() {
+            const slidesContainer = document.querySelector('.slides-container');
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`; // Slide effect using translateX
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides; // Increment and loop back to start
+            updateSlidePosition();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Decrement and loop back to last
+            updateSlidePosition();
+        }
+
+        // Set the initial slide position
+        updateSlidePosition();
+
+        // Optional: Auto-slide every 5 seconds
+        setInterval(nextSlide, 5000);
+
+        // Toggle Camera Feed Visibility
+        function toggleCamera() {
+            const cameraFeed = document.getElementById('cameraFeed');
+            cameraFeed.style.display = cameraFeed.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>
