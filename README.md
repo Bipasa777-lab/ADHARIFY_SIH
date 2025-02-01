@@ -37,3 +37,39 @@ In a world where digital security is non-negotiable, *AdhariFy* stands out by of
 ---
 
 ## 🛠 *Project Structure*
+AdhariFy/
+│
+├── static/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── liveness.js
+│   └── images/
+│       ├── logo.png
+│       └── aadhar.svg
+│
+├── templates/
+│   ├── index.html
+│   └── about.html
+│
+├── app.py
+├── README.md
+└── requirements.txt
+Features
+Real-time Face Detection 🧑‍💻
+Liveness Detection using facial landmarks 👁👁
+Simple and Intuitive UI 🎨
+Secure and Fast 🛡⚡
+🎯 How It Works
+📸 The application captures real-time video from the webcam.
+🕵‍♂ It uses OpenCV and Haar cascades to detect faces and eyes in the video feed.
+✅ A liveness check is performed by ensuring both eyes are detected in the frame.
+💚 If liveness is detected, a green bounding box with "Liveness Detected" is shown. Otherwise, it indicates "Spoof Detected" with a red bounding box.
+🌟 Contribution
+🤝 Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+💬 Contact
+For any inquiries or suggestions, feel free to reach out:
+
+📧 Email: bipasasa69@gmail.com
+🐙 GitHub: https://github.com/bipasa777-lab/AdhariFy_SIH
