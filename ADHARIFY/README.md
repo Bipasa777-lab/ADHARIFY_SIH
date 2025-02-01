@@ -83,7 +83,7 @@ Contributions are welcome! Feel free to open an issue or submit a pull request. 
 
 Feel free to reach out for any inquiries or suggestions!
 
-- **Email**: [koushiksarkar741777@gmail.com](mailto:koushiksarkar741777@gmail.com)
-- **GitHub**: https://github.com/
+- **Email**: [bipasasa69@gmail.com]
+- **GitHub**: https://github.com/bipasa777-lab/AdhariFy_SIH
 
 *Happy Coding!* 😄🚀
